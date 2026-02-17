@@ -220,6 +220,200 @@
             transform: translateY(-2px);
         }
 
+        /* --- BOTÃO DE LOGIN NO TOPO --- */
+        .login-top-btn {
+            background: linear-gradient(135deg, var(--primaria), var(--secundaria));
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 40px;
+            font-weight: 700;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0, 33, 87, 0.3);
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .login-top-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 33, 87, 0.4);
+        }
+
+        .user-info-top {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: rgba(0, 33, 87, 0.05);
+            padding: 5px 20px 5px 10px;
+            border-radius: 40px;
+            border: 1px solid rgba(0, 33, 87, 0.1);
+        }
+
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            background: var(--destaque);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: var(--primaria);
+            font-size: 18px;
+        }
+
+        .user-name-top {
+            font-weight: 700;
+            color: var(--primaria);
+        }
+
+        .logout-top-btn {
+            background: transparent;
+            border: 1px solid var(--erro);
+            color: var(--erro);
+            padding: 5px 15px;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .logout-top-btn:hover {
+            background: var(--erro);
+            color: white;
+        }
+
+        /* --- MODAL DE LOGIN --- */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 33, 87, 0.95);
+            backdrop-filter: blur(10px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal-login {
+            background: white;
+            border-radius: 30px;
+            padding: 50px;
+            width: 100%;
+            max-width: 450px;
+            box-shadow: var(--sombra-forte);
+            border-top: 8px solid var(--destaque);
+            position: relative;
+            animation: slideUp 0.5s ease;
+        }
+
+        .modal-login h2 {
+            color: var(--primaria);
+            font-size: 32px;
+            margin: 0 0 10px 0;
+            font-weight: 900;
+        }
+
+        .modal-login p {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 15px;
+        }
+
+        .login-field {
+            margin-bottom: 25px;
+        }
+
+        .login-field label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 700;
+            color: #333;
+            font-size: 14px;
+        }
+
+        .login-field input {
+            width: 100%;
+            height: 56px;
+            border: 2px solid #e8ecef;
+            border-radius: 16px;
+            padding: 0 20px;
+            font-size: 16px;
+            transition: all 0.3s;
+            box-sizing: border-box;
+        }
+
+        .login-field input:focus {
+            outline: none;
+            border-color: var(--destaque);
+            box-shadow: 0 0 0 6px rgba(197, 160, 89, 0.15);
+        }
+
+        .modal-login-btn {
+            width: 100%;
+            height: 56px;
+            background: linear-gradient(135deg, var(--primaria), var(--secundaria));
+            color: white;
+            border: none;
+            border-radius: 16px;
+            font-size: 16px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.4s;
+            margin-top: 20px;
+        }
+
+        .modal-login-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 33, 87, 0.3);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 30px;
+            cursor: pointer;
+            color: #999;
+            transition: color 0.3s;
+            line-height: 20px;
+        }
+
+        .modal-close:hover {
+            color: var(--erro);
+        }
+
+        .login-error {
+            color: var(--erro);
+            font-size: 14px;
+            margin-top: 15px;
+            text-align: center;
+            display: none;
+            font-weight: 600;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         .system-status {
             position: absolute;
             top: 110px;
@@ -860,10 +1054,10 @@
         .footer-actions::before {
             content: '';
             position: absolute;
-            top: 0;
+            top: -2px;
             left: 0;
             width: 100px;
-            height = '2px';
+            height: 2px;
             background: linear-gradient(90deg, var(--destaque), transparent);
         }
 
@@ -898,7 +1092,7 @@
         }
 
         .btn:hover::before {
-            left = '100%';
+            left: 100%;
         }
 
         .btn-primary {
@@ -939,6 +1133,16 @@
             filter: brightness(1.15);
         }
 
+        .btn-success {
+            background: linear-gradient(135deg, #28a745, #20c997);
+            color: white;
+        }
+
+        .btn-warning {
+            background: linear-gradient(135deg, #ffc107, #fd7e14);
+            color: white;
+        }
+
         .btn:disabled {
             opacity: 0.6;
             cursor: not-allowed;
@@ -953,7 +1157,7 @@
             border: 3px solid rgba(255, 255, 255, 0.3);
             border-bottom-color: white;
             border-radius: 50%;
-            display: none;
+            display: inline-block;
             animation: rotation 0.8s linear infinite;
         }
 
@@ -989,7 +1193,7 @@
             border-color: var(--primaria);
             border-bottom-color: transparent;
             width: 50px;
-            height = '50px';
+            height: 50px;
             border-width: 4px;
             margin-bottom: 20px;
         }
@@ -1143,20 +1347,317 @@
             background: #fff5f5;
         }
 
-        .prioridade-option.media {
+        .prioridade-option.media.selected {
             border-color: var(--alerta);
             background: #fff9e6;
         }
 
-        .prioridade-option.baixa {
+        .prioridade-option.baixa.selected {
             border-color: var(--sucesso);
             background: #f0f9f0;
+        }
+
+        /* --- TABELA DE SOLICITAÇÕES --- */
+        .filtros-container {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+
+        .filtros-container select,
+        .filtros-container input {
+            padding: 12px 20px;
+            border: 2px solid #e8ecef;
+            border-radius: 12px;
+            font-size: 14px;
+            min-width: 200px;
+        }
+
+        .solicitacoes-table {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--sombra-leve);
+            margin-top: 20px;
+        }
+
+        .solicitacoes-header {
+            display: grid;
+            grid-template-columns: 100px 100px 1fr 120px 120px 150px 100px;
+            background: linear-gradient(135deg, var(--primaria), var(--secundaria));
+            color: white;
+            font-weight: 700;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .solicitacoes-header div {
+            padding: 15px 10px;
+        }
+
+        .solicitacao-item {
+            display: grid;
+            grid-template-columns: 100px 100px 1fr 120px 120px 150px 100px;
+            border-bottom: 1px solid #e8ecef;
+            transition: background 0.3s;
+            align-items: center;
+        }
+
+        .solicitacao-item:hover {
+            background: #f8f9fa;
+        }
+
+        .solicitacao-item div {
+            padding: 15px 10px;
+            font-size: 14px;
+        }
+
+        .status-badge {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            display: inline-block;
+        }
+
+        .status-pendente {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .status-concluido {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .tipo-badge {
+            padding: 4px 8px;
+            border-radius: 8px;
+            font-size: 11px;
+            font-weight: 700;
+            display: inline-block;
+        }
+
+        .tipo-IRPF {
+            background: var(--primaria);
+            color: white;
+        }
+
+        .tipo-CNPJ {
+            background: var(--secundaria);
+            color: white;
+        }
+
+        .tipo-Denúncia {
+            background: #dc3545;
+            color: white;
+        }
+
+        .tipo-Manifesto {
+            background: #17a2b8;
+            color: white;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 8px;
+        }
+
+        .action-btn {
+            padding: 6px 12px;
+            border: none;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .action-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-concluir {
+            background: var(--sucesso);
+            color: white;
+        }
+
+        .btn-excluir {
+            background: var(--erro);
+            color: white;
+        }
+
+        .btn-visualizar {
+            background: var(--primaria);
+            color: white;
+        }
+
+        /* --- MODAL DETALHES --- */
+        .modal-detalhes {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+        }
+
+        .modal-detalhes.active {
+            display: flex;
+        }
+
+        .modal-detalhes-content {
+            background: white;
+            border-radius: 24px;
+            width: 90%;
+            max-width: 600px;
+            max-height: 80vh;
+            overflow-y: auto;
+            padding: 30px;
+            position: relative;
+            box-shadow: var(--sombra-forte);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            cursor: pointer;
+            color: #999;
+            transition: color 0.3s;
+        }
+
+        .modal-close:hover {
+            color: var(--erro);
+        }
+
+        .detalhes-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .detalhes-item {
+            font-size: 14px;
+        }
+
+        .detalhes-item strong {
+            color: #666;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .detalhes-item span {
+            color: #333;
+            font-weight: 500;
+        }
+
+        .detalhes-full {
+            grid-column: span 2;
+        }
+
+        .stats-admin {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .stat-admin-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: var(--sombra-leve);
+        }
+
+        .stat-admin-value {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--primaria);
+        }
+
+        .stat-admin-label {
+            font-size: 12px;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .em-desenvolvimento {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 16px;
+            color: #666;
+        }
+
+        .em-desenvolvimento h3 {
+            color: var(--primaria);
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .em-desenvolvimento p {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .em-desenvolvimento .data-prevista {
+            background: var(--destaque);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 30px;
+            display: inline-block;
+            font-weight: 600;
         }
     </style>
 </head>
 <body>
 
     <img src="https://normasinternet2.receita.fazenda.gov.br/assets/img/logo-rfb.png" class="watermark-rfb" alt="Logo Receita Federal Fundo">
+
+    <!-- MODAL DE LOGIN -->
+    <div class="modal-overlay" id="modalLogin">
+        <div class="modal-login">
+            <div class="modal-close" onclick="fecharModalLogin()">×</div>
+            <h2>🔐 Acesso Restrito</h2>
+            <p>Área administrativa do SIAF - Marcone RP</p>
+            
+            <div class="login-field">
+                <label>Usuário</label>
+                <input type="text" id="loginUsuario" placeholder="Digite seu usuário">
+            </div>
+            
+            <div class="login-field">
+                <label>Senha</label>
+                <input type="password" id="loginSenha" placeholder="Digite sua senha">
+            </div>
+            
+            <button class="modal-login-btn" onclick="fazerLogin()">ENTRAR NO PAINEL</button>
+            
+            <div class="login-error" id="loginError">
+                Acesso negado! Usuário ou senha incorretos.
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL DETALHES DA SOLICITAÇÃO -->
+    <div class="modal-detalhes" id="modalDetalhes">
+        <div class="modal-detalhes-content">
+            <div class="modal-close" onclick="fecharModalDetalhes()">×</div>
+            <div id="detalhesConteudo"></div>
+        </div>
+    </div>
 
     <aside class="sidebar">
         <div class="sidebar-header">
@@ -1172,6 +1673,8 @@
             <div class="nav-item" onclick="trocarAba(this, 'aba-pendencias')">⚖️ Pendências Fiscais</div>
             <div class="nav-item" onclick="trocarAba(this, 'aba-cadastro')">👤 Cadastro Municipal</div>
             <div class="nav-item" onclick="trocarAba(this, 'aba-certidao')">📄 Gerar Certidão Negativa</div>
+            <!-- Item administrativo (visível apenas para admin) -->
+            <div class="nav-item" id="adminPanelBtn" onclick="trocarAba(this, 'aba-admin')" style="display: none; background: rgba(197, 160, 89, 0.2); border-left-color: var(--destaque);">👑 Painel Administrativo</div>
         </nav>
         <div class="sidebar-footer">
             © 2025 MARCONE ROLEPLAY <br> 
@@ -1186,7 +1689,22 @@
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Gov.br_logo.svg/2560px-Gov.br_logo.svg.png" height="42" alt="Gov.br">
                 <img src="https://normasinternet2.receita.fazenda.gov.br/assets/img/logo-rfb.png" height="52" style="filter: brightness(0) saturate(100%) invert(10%) sepia(50%) saturate(3000%) hue-rotate(200deg);" alt="Receita Federal">
             </div>
-            <img src="https://i.imgur.com/VdhoW60.png" height="115" alt="União e Reconstrução" style="transition: transform 0.4s ease;">
+            
+            <!-- ÁREA DE LOGIN NO TOPO -->
+            <div id="loginTopArea">
+                <button class="login-top-btn" onclick="abrirModalLogin()">
+                    <span>🔐</span> ÁREA RESTRITA
+                </button>
+            </div>
+            
+            <!-- ÁREA DO USUÁRIO LOGADO (INICIALMENTE ESCONDIDA) -->
+            <div id="userTopArea" style="display: none;">
+                <div class="user-info-top">
+                    <div class="user-avatar">👑</div>
+                    <div class="user-name-top" id="userNameTop">ReceitaADM</div>
+                    <button class="logout-top-btn" onclick="fazerLogout()">SAIR</button>
+                </div>
+            </div>
         </header>
 
         <div class="system-status">
@@ -1194,6 +1712,7 @@
             <span>Conexão Criptografada via SSL-RF</span>
         </div>
 
+        <!-- ABA DECLARAÇÃO IRPF -->
         <main id="aba-declaracao" class="content-area active">
             <div class="page-title">
                 <h1>Declaração de Imposto de Renda</h1>
@@ -1283,6 +1802,7 @@
             </section>
         </main>
 
+        <!-- ABA CNPJ -->
         <main id="aba-cnpj" class="content-area">
             <div class="page-title">
                 <h1>Solicitação de Abertura de CNPJ</h1>
@@ -1387,6 +1907,7 @@
             </section>
         </main>
 
+        <!-- ABA MANIFESTO -->
         <main id="aba-manifesto" class="content-area">
             <div class="page-title">
                 <h1>Documento de Manifesto de Carga</h1>
@@ -1443,6 +1964,7 @@
             </section>
         </main>
 
+        <!-- ABA DENÚNCIA -->
         <main id="aba-denuncia" class="content-area">
             <div class="page-title">
                 <h1>Canal de Denúncia Anônima</h1>
@@ -1567,6 +2089,7 @@
             </section>
         </main>
 
+        <!-- ABA TRANSPARÊNCIA FISCAL (FUNCIONANDO) -->
         <main id="aba-transparencia" class="content-area">
             <div class="page-title">
                 <h1>Transparência Fiscal de Marcone</h1>
@@ -1574,7 +2097,6 @@
             </div>
             
             <section class="form-card">
-                <!-- IMPOSTÔMETRO PRINCIPAL -->
                 <div class="impostometro-container">
                     <div style="font-size: 15px; color: #888; margin-bottom: 15px; letter-spacing: 2px; text-transform: uppercase;">Total Arrecadado no Ano Fiscal 2025</div>
                     <div class="impostometro-valor" id="impostometro">R$ 1.250.480,00</div>
@@ -1583,11 +2105,9 @@
                     </div>
                 </div>
 
-                <!-- ESTATÍSTICAS DETALHADAS -->
                 <div class="section-label">Estatísticas Fiscais Detalhadas</div>
                 
                 <div class="stats-grid">
-                    <!-- Arrecadação Diária -->
                     <div class="stat-card">
                         <div class="stat-header">
                             <div class="stat-icon" style="background: linear-gradient(135deg, #28a745, #20c997);">💰</div>
@@ -1602,7 +2122,6 @@
                         </div>
                     </div>
 
-                    <!-- Impostos Recolhidos -->
                     <div class="stat-card">
                         <div class="stat-header">
                             <div class="stat-icon" style="background: linear-gradient(135deg, #002157, #003366);">🏛️</div>
@@ -1617,7 +2136,6 @@
                         </div>
                     </div>
 
-                    <!-- Taxa de Conformidade -->
                     <div class="stat-card">
                         <div class="stat-header">
                             <div class="stat-icon" style="background: linear-gradient(135deg, #ffc107, #fd7e14);">📊</div>
@@ -1632,7 +2150,6 @@
                         </div>
                     </div>
 
-                    <!-- Multas Aplicadas -->
                     <div class="stat-card">
                         <div class="stat-header">
                             <div class="stat-icon" style="background: linear-gradient(135deg, #dc3545, #c62828);">⚖️</div>
@@ -1647,7 +2164,6 @@
                         </div>
                     </div>
 
-                    <!-- Novos CNPJs -->
                     <div class="stat-card">
                         <div class="stat-header">
                             <div class="stat-icon" style="background: linear-gradient(135deg, #6f42c1, #9c27b0);">🏢</div>
@@ -1662,7 +2178,6 @@
                         </div>
                     </div>
 
-                    <!-- Denúncias Processadas -->
                     <div class="stat-card">
                         <div class="stat-header">
                             <div class="stat-icon" style="background: linear-gradient(135deg, #17a2b8, #0dcaf0);">🚨</div>
@@ -1678,7 +2193,6 @@
                     </div>
                 </div>
 
-                <!-- GRÁFICO DE ARRECADAÇÃO MENSAL -->
                 <div class="grafico-container">
                     <div style="font-size: 16px; font-weight: 700; color: var(--primaria); margin-bottom: 10px;">
                         Arrecadação Mensal - 2025
@@ -1730,11 +2244,9 @@
                     </div>
                 </div>
 
-                <!-- DISTRIBUIÇÃO DETALHADA DOS RECURSOS -->
                 <div class="section-label" style="margin-top: 40px;">Distribuição Detalhada dos Recursos Arrecadados</div>
                 
                 <div class="distribuicao-grid">
-                    <!-- Segurança Pública -->
                     <div class="distribuicao-card" style="border-color: #28a745;">
                         <div class="distribuicao-header">
                             <div class="distribuicao-titulo">Segurança Pública</div>
@@ -1749,7 +2261,6 @@
                         </ul>
                     </div>
 
-                    <!-- Infraestrutura -->
                     <div class="distribuicao-card" style="border-color: #c5a059;">
                         <div class="distribuicao-header">
                             <div class="distribuicao-titulo">Infraestrutura</div>
@@ -1764,7 +2275,6 @@
                         </ul>
                     </div>
 
-                    <!-- Saúde -->
                     <div class="distribuicao-card" style="border-color: #dc3545;">
                         <div class="distribuicao-header">
                             <div class="distribuicao-titulo">Saúde Pública</div>
@@ -1779,7 +2289,6 @@
                         </ul>
                     </div>
 
-                    <!-- Educação -->
                     <div class="distribuicao-card" style="border-color: #17a2b8;">
                         <div class="distribuicao-header">
                             <div class="distribuicao-titulo">Educação</div>
@@ -1794,7 +2303,6 @@
                         </ul>
                     </div>
 
-                    <!-- Administração -->
                     <div class="distribuicao-card" style="border-color: #6f42c1;">
                         <div class="distribuicao-header">
                             <div class="distribuicao-titulo">Administração</div>
@@ -1810,7 +2318,6 @@
                     </div>
                 </div>
 
-                <!-- INFORMAÇÕES ADICIONAIS -->
                 <div class="regras-container" style="margin-top: 40px;">
                     <h3>Informações Técnicas da Arrecadação</h3>
                     <ul class="regras-lista">
@@ -1835,112 +2342,449 @@
             </section>
         </main>
 
-        <main id="aba-minhas" class="content-area"><div class="page-title"><h1>Minhas Declarações</h1></div></main>
-        <main id="aba-pendencias" class="content-area"><div class="page-title"><h1>Pendências Fiscais</h1></div></main>
-        <main id="aba-cadastro" class="content-area"><div class="page-title"><h1>Cadastro Municipal</h1></div></main>
-        <main id="aba-certidao" class="content-area"><div class="page-title"><h1>Gerar Certidão Negativa</h1></div></main>
+        <!-- ABA MINHAS DECLARAÇÕES -->
+        <main id="aba-minhas" class="content-area">
+            <div class="page-title">
+                <h1>Minhas Declarações</h1>
+                <p>Histórico de declarações enviadas</p>
+            </div>
+            <div class="form-card" id="minhasDeclaracoes">
+                <!-- Preenchido via JavaScript -->
+            </div>
+        </main>
+
+        <!-- ABA PENDÊNCIAS FISCAIS (EM DESENVOLVIMENTO) -->
+        <main id="aba-pendencias" class="content-area">
+            <div class="page-title">
+                <h1>Pendências Fiscais</h1>
+                <p>Regularize sua situação com o fisco</p>
+            </div>
+            <div class="form-card">
+                <div class="em-desenvolvimento">
+                    <h3>⚖️ Módulo em Desenvolvimento</h3>
+                    <p>Estamos definindo as datas para início da declaração do IRPF 2025.</p>
+                    <p>Em breve você poderá consultar e regularizar suas pendências fiscais diretamente aqui.</p>
+                    <div class="data-prevista">
+                        Previsão de lançamento: Abril/2025
+                    </div>
+                    <p style="margin-top: 30px; font-size: 14px;">Para mais informações, entre em contato com a Receita Federal de Marcone.</p>
+                </div>
+            </div>
+        </main>
+
+        <!-- ABA CADASTRO MUNICIPAL -->
+        <main id="aba-cadastro" class="content-area">
+            <div class="page-title">
+                <h1>Cadastro Municipal</h1>
+                <p>Atualize seus dados cadastrais</p>
+            </div>
+            <div class="form-card">
+                <p style="text-align: center; color: #666; padding: 50px;">Funcionalidade em desenvolvimento</p>
+            </div>
+        </main>
+
+        <!-- ABA CERTIDÃO NEGATIVA -->
+        <main id="aba-certidao" class="content-area">
+            <div class="page-title">
+                <h1>Gerar Certidão Negativa</h1>
+                <p>Certidão de Débitos Municipais</p>
+            </div>
+            <div class="form-card">
+                <p style="text-align: center; color: #666; padding: 50px;">Funcionalidade em desenvolvimento</p>
+            </div>
+        </main>
+
+        <!-- ABA PAINEL ADMINISTRATIVO (visível apenas para admin) -->
+        <main id="aba-admin" class="content-area">
+            <div class="page-title">
+                <h1>👑 Painel Administrativo</h1>
+                <p>Gerencie todas as solicitações do sistema</p>
+            </div>
+
+            <section class="form-card">
+                <div class="filtros-container">
+                    <select id="filtroTipo" onchange="filtrarSolicitacoes()">
+                        <option value="todos">Todos os tipos</option>
+                        <option value="IRPF">Declaração IRPF</option>
+                        <option value="CNPJ">Abertura CNPJ</option>
+                        <option value="Denúncia">Denúncias</option>
+                        <option value="Manifesto">Manifesto de Carga</option>
+                    </select>
+                    
+                    <select id="filtroStatus" onchange="filtrarSolicitacoes()">
+                        <option value="todos">Todos os status</option>
+                        <option value="pendente">Pendente</option>
+                        <option value="concluido">Concluído</option>
+                    </select>
+                    
+                    <input type="text" id="filtroBusca" placeholder="Buscar por nome ou protocolo..." onkeyup="filtrarSolicitacoes()">
+                </div>
+
+                <!-- Estatísticas rápidas -->
+                <div class="stats-admin" id="adminStats">
+                    <div class="stat-admin-card">
+                        <div class="stat-admin-value" id="totalSolicitacoes">0</div>
+                        <div class="stat-admin-label">Total de Solicitações</div>
+                    </div>
+                    <div class="stat-admin-card">
+                        <div class="stat-admin-value" id="pendentesCount">0</div>
+                        <div class="stat-admin-label">Pendentes</div>
+                    </div>
+                    <div class="stat-admin-card">
+                        <div class="stat-admin-value" id="concluidasCount">0</div>
+                        <div class="stat-admin-label">Concluídas</div>
+                    </div>
+                    <div class="stat-admin-card">
+                        <div class="stat-admin-value" id="denunciasCount">0</div>
+                        <div class="stat-admin-label">Denúncias</div>
+                    </div>
+                </div>
+
+                <!-- Tabela de solicitações -->
+                <div class="solicitacoes-table">
+                    <div class="solicitacoes-header">
+                        <div>Protocolo</div>
+                        <div>Tipo</div>
+                        <div>Solicitante</div>
+                        <div>Data</div>
+                        <div>Status</div>
+                        <div>Prioridade</div>
+                        <div>Ações</div>
+                    </div>
+                    <div id="solicitacoesList">
+                        <!-- Preenchido via JavaScript -->
+                    </div>
+                </div>
+
+                <div style="margin-top: 30px; display: flex; gap: 15px; justify-content: flex-end;">
+                    <button class="btn btn-success" onclick="exportarRelatorio()">
+                        📥 Exportar Relatório
+                    </button>
+                </div>
+            </section>
+        </main>
     </div>
 
     <audio id="somSucesso" src="https://assets.mixkit.co/active_storage/sfx/2869/2869-preview.mp3"></audio>
 
     <script>
-        // WEBHOOKS
-        const WEBHOOK_IRPF = "https://discordapp.com/api/webhooks/1451031785663238267/wSu5_uSZ-RGfxKPvpChlooyO6AgK3_3upWtZtbJ-2FHPGwg1-HOlK89fZDn4BaFCqN-X";
-        const WEBHOOK_CNPJ = "https://discordapp.com/api/webhooks/1469067574523465771/7XVqbTQxjWegP40q5Qa5AVT2WZ67dDAT5Q8uVxtJ394xiCz5dzAN_Uuy-5e1dp1OpM9w";
-
-        let valorArrecadado = 1250480.00;
+        // ===== VARIÁVEIS GLOBAIS =====
+        let adminLogado = false;
+        let todasSolicitacoes = [];
         let prioridadeSelecionada = null;
         let tagsSelecionadas = [];
+        let valorArrecadado = 1250480.00;
 
-        function atualizarImpostometro() {
-            valorArrecadado += Math.random() * 0.8;
-            const el = document.getElementById('impostometro');
-            if(el) el.innerText = 'R$ ' + valorArrecadado.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-            
-            const agora = new Date();
-            const horaFormatada = agora.toLocaleTimeString('pt-BR');
-            document.getElementById('horaAtualizacao').textContent = horaFormatada;
-            
-            atualizarEstatisticasSecundarias();
+        // ===== FUNÇÕES DE LOGIN =====
+        function abrirModalLogin() {
+            document.getElementById('modalLogin').style.display = 'flex';
+            // Limpar campos ao abrir o modal
+            document.getElementById('loginUsuario').value = '';
+            document.getElementById('loginSenha').value = '';
+            document.getElementById('loginError').style.display = 'none';
         }
-        
-        function atualizarEstatisticasSecundarias() {
-            const variacao = (Math.random() - 0.5) * 0.1;
-            
-            const arrecadacaoDiaria = valorArrecadado / 30;
-            document.getElementById('arrecadacaoDiaria').textContent = 
-                'R$ ' + Math.round(arrecadacaoDiaria).toLocaleString('pt-BR');
-            
-            const impostosRecolhidos = Math.floor(15000 + (valorArrecadado / 100));
-            document.getElementById('impostosRecolhidos').textContent = 
-                impostosRecolhidos.toLocaleString('pt-BR');
-            
-            const taxaBase = 94.7;
-            const taxaAtual = taxaBase + (Math.random() * 0.6 - 0.3);
-            document.getElementById('taxaConformidade').textContent = 
-                taxaAtual.toFixed(1) + '%';
-            
-            const multasBase = 125300;
-            const multasAtual = multasBase * (1 - (taxaAtual - taxaBase) / 100);
-            document.getElementById('multasAplicadas').textContent = 
-                'R$ ' + Math.round(multasAtual).toLocaleString('pt-BR');
-            
-            const cnpjsBase = 247;
-            const crescimento = Math.floor(Math.random() * 5);
-            document.getElementById('novosCnpjs').textContent = 
-                (cnpjsBase + crescimento).toLocaleString('pt-BR');
-            
-            const denunciasBase = 1842;
-            const denunciasAtual = denunciasBase + Math.floor(Math.random() * 10);
-            document.getElementById('denunciasProcessadas').textContent = 
-                denunciasAtual.toLocaleString('pt-BR');
+
+        function fecharModalLogin() {
+            document.getElementById('modalLogin').style.display = 'none';
         }
-        
-        setInterval(atualizarImpostometro, 5000);
 
-        document.addEventListener('DOMContentLoaded', function() {
-            atualizarImpostometro();
-        });
+        function fazerLogin() {
+            const usuario = document.getElementById('loginUsuario').value;
+            const senha = document.getElementById('loginSenha').value;
+            
+            // Credenciais seguras
+            if (usuario === 'ReceitaADM' && senha === '122000') {
+                adminLogado = true;
+                
+                // Esconde botão de login e mostra área do usuário
+                document.getElementById('loginTopArea').style.display = 'none';
+                document.getElementById('userTopArea').style.display = 'block';
+                document.getElementById('userNameTop').textContent = 'ReceitaADM';
+                
+                // Mostra item do painel administrativo na sidebar
+                document.getElementById('adminPanelBtn').style.display = 'flex';
+                
+                // Fecha modal
+                fecharModalLogin();
+                
+                // Carrega solicitações
+                carregarSolicitacoes();
+                
+                // Mostra mensagem de boas-vindas
+                mostrarMensagem('Acesso autorizado ao painel administrativo!', 'success');
+            } else {
+                document.getElementById('loginError').style.display = 'block';
+                // Limpar campos por segurança
+                document.getElementById('loginUsuario').value = '';
+                document.getElementById('loginSenha').value = '';
+            }
+        }
 
-        function trocarAba(elemento, idAba) {
-            document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
-            elemento.classList.add('active');
-            document.querySelectorAll('.content-area').forEach(area => area.classList.remove('active'));
-            const aba = document.getElementById(idAba);
-            if(aba) {
-                aba.classList.add('active');
-                const titulo = aba.querySelector('h1');
-                if(titulo) {
-                    titulo.style.transform = 'scale(1.02)';
-                    setTimeout(() => titulo.style.transform = 'scale(1)', 300);
+        function fazerLogout() {
+            adminLogado = false;
+            
+            // Mostra botão de login e esconde área do usuário
+            document.getElementById('loginTopArea').style.display = 'block';
+            document.getElementById('userTopArea').style.display = 'none';
+            
+            // Esconde item do painel administrativo
+            document.getElementById('adminPanelBtn').style.display = 'none';
+            
+            // Volta para a aba inicial
+            const primeiraAba = document.querySelector('.nav-item');
+            if (primeiraAba) {
+                trocarAba(primeiraAba, 'aba-declaracao');
+            }
+            
+            mostrarMensagem('Logout realizado com sucesso!', 'success');
+        }
+
+        // ===== FUNÇÕES DE SOLICITAÇÕES =====
+        function salvarSolicitacao(tipo, dados) {
+            const solicitacoes = JSON.parse(localStorage.getItem('solicitacoes')) || [];
+            
+            const protocolo = gerarProtocolo(tipo);
+            const prioridade = dados.prioridade || 'media';
+            
+            const novaSolicitacao = {
+                id: Date.now(),
+                protocolo: protocolo,
+                tipo: tipo,
+                dados: dados,
+                status: 'pendente',
+                prioridade: prioridade,
+                data: new Date().toLocaleString('pt-BR'),
+                dataISO: new Date().toISOString()
+            };
+            
+            solicitacoes.push(novaSolicitacao);
+            localStorage.setItem('solicitacoes', JSON.stringify(solicitacoes));
+            
+            return novaSolicitacao;
+        }
+
+        function gerarProtocolo(tipo) {
+            const prefixos = {
+                'IRPF': 'IR',
+                'CNPJ': 'CN',
+                'Denúncia': 'DN',
+                'Manifesto': 'MF'
+            };
+            
+            const prefixo = prefixos[tipo] || 'SL';
+            const ano = new Date().getFullYear();
+            const random = Math.floor(Math.random() * 10000).toString().padStart(4, '0');
+            
+            return `${prefixo}-${ano}-${random}`;
+        }
+
+        function carregarSolicitacoes() {
+            todasSolicitacoes = JSON.parse(localStorage.getItem('solicitacoes')) || [];
+            atualizarTabelaSolicitacoes();
+            atualizarMinhasDeclaracoes();
+            atualizarEstatisticasAdmin();
+        }
+
+        function atualizarTabelaSolicitacoes() {
+            const tipo = document.getElementById('filtroTipo')?.value || 'todos';
+            const status = document.getElementById('filtroStatus')?.value || 'todos';
+            const busca = document.getElementById('filtroBusca')?.value?.toLowerCase() || '';
+            
+            let filtradas = todasSolicitacoes;
+            
+            if (tipo !== 'todos') {
+                filtradas = filtradas.filter(s => s.tipo === tipo);
+            }
+            
+            if (status !== 'todos') {
+                filtradas = filtradas.filter(s => s.status === status);
+            }
+            
+            if (busca) {
+                filtradas = filtradas.filter(s => 
+                    (s.protocolo && s.protocolo.toLowerCase().includes(busca)) ||
+                    (s.dados?.nome && s.dados.nome.toLowerCase().includes(busca)) ||
+                    (s.dados?.solicitante && s.dados.solicitante.toLowerCase().includes(busca))
+                );
+            }
+            
+            const listElement = document.getElementById('solicitacoesList');
+            if (!listElement) return;
+            
+            if (filtradas.length === 0) {
+                listElement.innerHTML = '<div style="text-align: center; padding: 40px; color: #666; grid-column: span 7;">Nenhuma solicitação encontrada</div>';
+                return;
+            }
+            
+            listElement.innerHTML = filtradas.map(s => {
+                const nomeSolicitante = s.dados?.nome || s.dados?.solicitante || s.dados?.materialCarga || '-';
+                const prioridadeCor = s.prioridade === 'alta' ? '#dc3545' : (s.prioridade === 'baixa' ? '#28a745' : '#ffc107');
+                
+                return `
+                <div class="solicitacao-item">
+                    <div><strong>${s.protocolo}</strong></div>
+                    <div><span class="tipo-badge tipo-${s.tipo}">${s.tipo}</span></div>
+                    <div>${nomeSolicitante}</div>
+                    <div>${s.data}</div>
+                    <div><span class="status-badge status-${s.status}">${s.status === 'pendente' ? '⏳ Pendente' : '✅ Concluído'}</span></div>
+                    <div><span style="color: ${prioridadeCor}; font-weight: 600;">${s.prioridade ? s.prioridade.toUpperCase() : 'MÉDIA'}</span></div>
+                    <div class="action-buttons">
+                        <button class="action-btn btn-visualizar" onclick="visualizarSolicitacao(${s.id})">👁️ Ver</button>
+                        ${s.status === 'pendente' ? 
+                            `<button class="action-btn btn-concluir" onclick="concluirSolicitacao(${s.id})">✅ Concluir</button>` : 
+                            ''}
+                        <button class="action-btn btn-excluir" onclick="excluirSolicitacao(${s.id})">🗑️ Excluir</button>
+                    </div>
+                </div>
+            `}).join('');
+        }
+
+        function atualizarMinhasDeclaracoes() {
+            // Mostra todas as solicitações (simulando minhas declarações)
+            const minhas = todasSolicitacoes.slice().reverse();
+            const container = document.getElementById('minhasDeclaracoes');
+            
+            if (!container) return;
+            
+            if (minhas.length === 0) {
+                container.innerHTML = '<p style="text-align: center; color: #666; padding: 40px;">Nenhuma declaração encontrada</p>';
+                return;
+            }
+            
+            let html = '<div style="overflow-x: auto;">';
+            html += '<table style="width: 100%; border-collapse: collapse;">';
+            html += '<tr style="background: #f8f9fa; font-weight: 700;">';
+            html += '<th style="padding: 15px; text-align: left;">Protocolo</th>';
+            html += '<th style="padding: 15px; text-align: left;">Tipo</th>';
+            html += '<th style="padding: 15px; text-align: left;">Data</th>';
+            html += '<th style="padding: 15px; text-align: left;">Status</th>';
+            html += '<th style="padding: 15px; text-align: left;">Ações</th>';
+            html += '</tr>';
+            
+            minhas.forEach(s => {
+                html += '<tr style="border-bottom: 1px solid #e8ecef;">';
+                html += `<td style="padding: 15px;"><strong>${s.protocolo}</strong></td>`;
+                html += `<td style="padding: 15px;">${s.tipo}</td>`;
+                html += `<td style="padding: 15px;">${s.data}</td>`;
+                html += `<td style="padding: 15px;"><span class="status-badge status-${s.status}">${s.status}</span></td>`;
+                html += `<td style="padding: 15px;"><button class="btn btn-ghost" style="padding: 8px 15px;" onclick="visualizarSolicitacao(${s.id})">Ver detalhes</button></td>`;
+                html += '</tr>';
+            });
+            
+            html += '</table></div>';
+            container.innerHTML = html;
+        }
+
+        function atualizarEstatisticasAdmin() {
+            document.getElementById('totalSolicitacoes').textContent = todasSolicitacoes.length;
+            document.getElementById('pendentesCount').textContent = todasSolicitacoes.filter(s => s.status === 'pendente').length;
+            document.getElementById('concluidasCount').textContent = todasSolicitacoes.filter(s => s.status === 'concluido').length;
+            document.getElementById('denunciasCount').textContent = todasSolicitacoes.filter(s => s.tipo === 'Denúncia').length;
+        }
+
+        function filtrarSolicitacoes() {
+            atualizarTabelaSolicitacoes();
+        }
+
+        function concluirSolicitacao(id) {
+            if (confirm('Deseja marcar esta solicitação como concluída?')) {
+                const solicitacoes = JSON.parse(localStorage.getItem('solicitacoes')) || [];
+                const index = solicitacoes.findIndex(s => s.id === id);
+                
+                if (index !== -1) {
+                    solicitacoes[index].status = 'concluido';
+                    localStorage.setItem('solicitacoes', JSON.stringify(solicitacoes));
+                    carregarSolicitacoes();
+                    mostrarMensagem('Solicitação concluída com sucesso!', 'success');
                 }
             }
         }
 
-        function verificarNatureza() {
-            const select = document.getElementById('selectNatureza');
-            const input = document.getElementById('inputAssociados');
-            if (select.value === "Empresa individual") {
-                input.value = "Não aplicável";
-                input.disabled = true;
-                input.style.background = '#f5f5f5';
-                input.style.color = '#999';
-            } else {
-                input.value = "";
-                input.disabled = false;
-                input.style.background = '#fdfdfe';
-                input.style.color = '#333';
+        function excluirSolicitacao(id) {
+            if (confirm('Tem certeza que deseja excluir esta solicitação permanentemente?')) {
+                const solicitacoes = JSON.parse(localStorage.getItem('solicitacoes')) || [];
+                const novasSolicitacoes = solicitacoes.filter(s => s.id !== id);
+                localStorage.setItem('solicitacoes', JSON.stringify(novasSolicitacoes));
+                carregarSolicitacoes();
+                mostrarMensagem('Solicitação excluída com sucesso!', 'success');
             }
         }
 
-        function resetarCNPJ() { 
-            const input = document.getElementById('inputAssociados');
-            input.disabled = false;
-            input.style.background = '#fdfdfe';
-            input.style.color = '#333';
+        function visualizarSolicitacao(id) {
+            const s = todasSolicitacoes.find(s => s.id === id);
+            if (!s) return;
+            
+            let html = `
+                <h2 style="color: var(--primaria); margin-bottom: 20px;">Detalhes da Solicitação</h2>
+                <div style="background: #f8f9fa; padding: 20px; border-radius: 12px; margin-bottom: 20px;">
+                    <p><strong>Protocolo:</strong> ${s.protocolo}</p>
+                    <p><strong>Tipo:</strong> ${s.tipo}</p>
+                    <p><strong>Data:</strong> ${s.data}</p>
+                    <p><strong>Status:</strong> <span class="status-badge status-${s.status}">${s.status}</span></p>
+                    <p><strong>Prioridade:</strong> ${s.prioridade || 'N/A'}</p>
+                </div>
+                <h3 style="color: var(--primaria); margin: 20px 0 10px;">Dados Enviados</h3>
+                <div class="detalhes-grid">
+            `;
+            
+            // Adiciona os dados específicos de cada tipo
+            if (s.dados) {
+                for (let [key, value] of Object.entries(s.dados)) {
+                    if (value && value !== '') {
+                        const keyFormatada = key.charAt(0).toUpperCase() + key.slice(1);
+                        html += `
+                            <div class="detalhes-item">
+                                <strong>${keyFormatada}:</strong>
+                                <span>${value}</span>
+                            </div>
+                        `;
+                    }
+                }
+            }
+            
+            html += '</div>';
+            
+            if (s.status === 'pendente' && adminLogado) {
+                html += `
+                    <div style="margin-top: 30px; display: flex; gap: 15px; justify-content: flex-end;">
+                        <button class="btn btn-success" onclick="concluirSolicitacao(${s.id}); fecharModalDetalhes()">✅ Concluir</button>
+                        <button class="btn btn-danger" onclick="excluirSolicitacao(${s.id}); fecharModalDetalhes()">🗑️ Excluir</button>
+                    </div>
+                `;
+            }
+            
+            document.getElementById('detalhesConteudo').innerHTML = html;
+            document.getElementById('modalDetalhes').classList.add('active');
         }
 
-        // ===== FUNÇÕES DE VALIDAÇÃO =====
+        function fecharModalDetalhes() {
+            document.getElementById('modalDetalhes').classList.remove('active');
+        }
+
+        function exportarRelatorio() {
+            let csv = 'Protocolo,Tipo,Solicitante,Data,Status,Prioridade\n';
+            
+            todasSolicitacoes.forEach(s => {
+                const nome = s.dados?.nome || s.dados?.solicitante || s.dados?.materialCarga || '-';
+                csv += `"${s.protocolo}","${s.tipo}","${nome}","${s.data}","${s.status}","${s.prioridade || 'media'}"\n`;
+            });
+            
+            const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+            const link = document.createElement('a');
+            const url = URL.createObjectURL(blob);
+            
+            link.setAttribute('href', url);
+            link.setAttribute('download', `relatorio_siaf_${new Date().toISOString().slice(0,10)}.csv`);
+            link.style.visibility = 'hidden';
+            
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            
+            mostrarMensagem('Relatório exportado com sucesso!', 'success');
+        }
+
+        // ===== FUNÇÕES DE VALIDAÇÃO DOS FORMULÁRIOS =====
         function mostrarErro(elemento, mensagem) {
             elemento.classList.add('input-error');
             const errorDiv = elemento.parentElement.querySelector('.error-message');
@@ -1970,6 +2814,25 @@
             if (message) message.style.display = 'none';
         }
 
+        function mostrarMensagem(texto, tipo) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `form-message ${tipo}`;
+            messageDiv.textContent = texto;
+            messageDiv.style.position = 'fixed';
+            messageDiv.style.top = '20px';
+            messageDiv.style.right = '20px';
+            messageDiv.style.zIndex = '10001';
+            messageDiv.style.maxWidth = '300px';
+            messageDiv.style.animation = 'slideIn 0.3s ease';
+            
+            document.body.appendChild(messageDiv);
+            
+            setTimeout(() => {
+                messageDiv.style.animation = 'fadeOut 0.3s ease';
+                setTimeout(() => messageDiv.remove(), 300);
+            }, 3000);
+        }
+
         // Validação Declaração IRPF
         function validarDeclaracao(event) {
             event.preventDefault();
@@ -1988,8 +2851,7 @@
             
             camposObrigatorios.forEach(campo => {
                 const elemento = document.getElementById(campo.id);
-                if ((elemento.type === 'select-one' && elemento.value === '') || 
-                    (elemento.value === '' || elemento.value === null || elemento.value === undefined)) {
+                if (!elemento.value || elemento.value.trim() === '') {
                     mostrarErro(elemento, `${campo.nome} é obrigatório`);
                     isValid = false;
                 }
@@ -2003,115 +2865,38 @@
             }
             
             if (isValid) {
-                transmitirDados();
-            } else {
-                const message = document.getElementById('messageDeclaracao');
-                message.className = 'form-message error';
-                message.textContent = 'Corrija os erros antes de transmitir';
-                message.style.display = 'block';
+                const overlay = document.getElementById('overlayFisco');
+                overlay.style.display = 'flex';
                 
-                const primeiroErro = document.querySelector('.input-error');
-                if (primeiroErro) {
-                    primeiroErro.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                }
+                setTimeout(() => {
+                    const dados = {
+                        nome: document.getElementById('nomeCidadao').value,
+                        rg: document.getElementById('rgCidadao').value,
+                        ocupacao: document.getElementById('ocupacao').value,
+                        renda: document.getElementById('rendaMensal').value,
+                        veiculos: document.getElementById('frotaVeiculos').value || '0',
+                        aeronaves: document.getElementById('aeronaves').value,
+                        embarcacoes: document.getElementById('embarcacoes').value
+                    };
+                    
+                    const solicitacao = salvarSolicitacao('IRPF', dados);
+                    
+                    overlay.style.display = 'none';
+                    
+                    const msg = document.getElementById('messageDeclaracao');
+                    msg.className = 'form-message success';
+                    msg.innerHTML = `✅ Declaração enviada! Protocolo: ${solicitacao.protocolo}`;
+                    
+                    document.getElementById('somSucesso').play();
+                    
+                    // Limpa o formulário
+                    document.getElementById('formFiscal').reset();
+                    
+                    mostrarMensagem('Declaração transmitida com sucesso!', 'success');
+                }, 2000);
             }
             
             return false;
-        }
-
-        function gerarProtocolo(tipo = 'RF') {
-            const ano = new Date().getFullYear();
-            const prefixo = tipo === 'CNPJ' ? 'CNPJ' : 'RF';
-            let contador = localStorage.getItem(`contadorProtocolo_${prefixo}`);
-            if (!contador) contador = 0;
-            contador = parseInt(contador) + 1;
-            localStorage.setItem(`contadorProtocolo_${prefixo}`, contador);
-            const numero = String(contador).padStart(5, '0');
-            return `${prefixo}-GTA-${ano}-${numero}`;
-        }
-
-        // Transmissão IRPF
-        function transmitirDados() {
-            const label = document.getElementById('labelBotao');
-            const loader = document.getElementById('loaderBotao');
-            const overlay = document.getElementById('overlayFisco');
-            const som = document.getElementById('somSucesso');
-            const formCard = document.getElementById('cardDeclaracao');
-            const message = document.getElementById('messageDeclaracao');
-
-            label.style.display = 'none';
-            loader.style.display = 'block';
-            overlay.style.display = 'flex';
-            formCard.style.transform = 'scale(0.99)';
-
-            setTimeout(() => {
-                const protocolo = gerarProtocolo('RF');
-                
-                const nome = document.getElementById('nomeCidadao')?.value || '-';
-                const rg = document.getElementById('rgCidadao')?.value || '-';
-                const renda = document.getElementById('rendaMensal')?.value || '0';
-                const profissao = document.getElementById('ocupacao')?.value || '-';
-                const veiculos = document.getElementById('frotaVeiculos')?.value || '0';
-                const aeronaves = document.getElementById('aeronaves')?.value || 'Não Possuo';
-                const embarcacoes = document.getElementById('embarcacoes')?.value || 'Não Possuo';
-
-                const payload = {
-                    username: "Receita Federal - GTA RP",
-                    embeds: [
-                        {
-                            title: "📄 Declaração de Imposto de Renda",
-                            description: 
-`📌 **PROTOCOLO**
-\`${protocolo}\`
-
-━━━━━━━━━━━━━━━━━━
-
-👤 **Cidadão:** ${nome}
-🆔 **RG:** ${rg}
-
-💼 **Ocupação:** ${profissao}
-
-💰 **Renda Mensal:** R$ ${Number(renda).toLocaleString('pt-BR')}
-🚗 **Frota de Veículos:** ${veiculos} unidade(s)
-
-🚁 **Aeronaves:** ${aeronaves}
-🛥️ **Embarcações:** ${embarcacoes}
-
-━━━━━━━━━━━━━━━━━━
-
-📅 **Data/Hora:** ${new Date().toLocaleString("pt-BR")}
-📍 **Município:** Marcone-RP`,
-                            color: 263172,
-                            footer: {
-                                text: "SIAF • Sistema Integrado de Assuntos Fiscais"
-                            }
-                        }
-                    ]
-                };
-
-                // Envia para IRPF
-                fetch(WEBHOOK_IRPF, {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify(payload)
-                }).then(response => {
-                    console.log("✅ IRPF enviado para Discord:", response.status);
-                }).catch(error => {
-                    console.error("❌ Erro ao enviar IRPF:", error);
-                });
-
-                overlay.style.display = 'none';
-                label.style.display = 'block';
-                loader.style.display = 'none';
-                formCard.style.transform = '';
-
-                if (som) som.play();
-
-                message.className = 'form-message success';
-                message.textContent = `✅ Declaração transmitida com sucesso! Protocolo: ${protocolo}`;
-                message.style.display = 'block';
-
-            }, 2000);
         }
 
         // Validação CNPJ
@@ -2134,7 +2919,7 @@
             
             camposObrigatorios.forEach(campo => {
                 const elemento = document.getElementById(campo.id);
-                if (!elemento.value.trim()) {
+                if (!elemento.value || elemento.value.trim() === '') {
                     mostrarErro(elemento, `${campo.nome} é obrigatório`);
                     isValid = false;
                 }
@@ -2148,108 +2933,41 @@
             }
             
             if (isValid) {
-                enviarSolicitacaoCNPJ();
-            } else {
-                const message = document.getElementById('messageCNPJ');
-                message.className = 'form-message error';
-                message.textContent = 'Corrija os erros antes de enviar';
-                message.style.display = 'block';
+                const overlay = document.getElementById('overlayCNPJ');
+                overlay.style.display = 'flex';
+                
+                setTimeout(() => {
+                    const dados = {
+                        solicitante: document.getElementById('nomeSolicitante').value,
+                        rg: document.getElementById('rgSolicitante').value,
+                        contato: document.getElementById('contatoSolicitante').value,
+                        empresa: document.getElementById('nomeEmpresa').value,
+                        endereco: document.getElementById('enderecoEmpresa').value,
+                        natureza: document.getElementById('selectNatureza').value,
+                        porte: document.getElementById('porteEmpresa').value,
+                        avcb: document.getElementById('avcb').value,
+                        associados: document.getElementById('inputAssociados').value || 'Não informado'
+                    };
+                    
+                    const solicitacao = salvarSolicitacao('CNPJ', dados);
+                    
+                    overlay.style.display = 'none';
+                    
+                    const msg = document.getElementById('messageCNPJ');
+                    msg.className = 'form-message success';
+                    msg.innerHTML = `✅ CNPJ solicitado! Protocolo: ${solicitacao.protocolo}`;
+                    
+                    document.getElementById('somSucesso').play();
+                    
+                    // Limpa o formulário
+                    document.getElementById('formCNPJ').reset();
+                    resetarCNPJ();
+                    
+                    mostrarMensagem('Solicitação de CNPJ enviada!', 'success');
+                }, 2000);
             }
             
             return false;
-        }
-
-        // Envio CNPJ
-        function enviarSolicitacaoCNPJ() {
-            const label = document.getElementById('labelBotaoCNPJ');
-            const loader = document.getElementById('loaderBotaoCNPJ');
-            const overlay = document.getElementById('overlayCNPJ');
-            const som = document.getElementById('somSucesso');
-            const formCard = document.getElementById('cardCNPJ');
-            const message = document.getElementById('messageCNPJ');
-
-            label.style.display = 'none';
-            loader.style.display = 'block';
-            overlay.style.display = 'flex';
-            formCard.style.transform = 'scale(0.99)';
-
-            setTimeout(() => {
-                const protocolo = gerarProtocolo('CNPJ');
-                
-                const solicitante = document.getElementById('nomeSolicitante')?.value || '-';
-                const rg = document.getElementById('rgSolicitante')?.value || '-';
-                const contato = document.getElementById('contatoSolicitante')?.value || '-';
-                const empresa = document.getElementById('nomeEmpresa')?.value || '-';
-                const endereco = document.getElementById('enderecoEmpresa')?.value || '-';
-                const natureza = document.getElementById('selectNatureza')?.value || '-';
-                const porte = document.getElementById('porteEmpresa')?.value || '-';
-                const avcb = document.getElementById('avcb')?.value || '-';
-                const associados = document.getElementById('inputAssociados')?.value || 'Não aplicável';
-
-                const payload = {
-                    username: "SIAF - Cadastro Empresarial",
-                    embeds: [
-                        {
-                            title: "🏢 NOVA SOLICITAÇÃO DE CNPJ",
-                            description: 
-`📌 **PROTOCOLO**
-\`${protocolo}\`
-
-━━━━━━━━━━━━━━━━━━
-
-👤 **SOLICITANTE**
-**Nome:** ${solicitante}
-**RG:** ${rg}
-**Contato:** ${contato}
-
-🏢 **EMPRESA**
-**Nome/Razão Social:** ${empresa}
-**Endereço:** ${endereco}
-**Natureza Jurídica:** ${natureza}
-**Porte:** ${porte}
-**AVCB:** ${avcb}
-**Associados:** ${associados}
-
-━━━━━━━━━━━━━━━━━━
-
-📅 **Data/Hora:** ${new Date().toLocaleString("pt-BR")}
-📍 **Município:** Marcone-RP`,
-                            color: 0x003366,
-                            footer: {
-                                text: "SIAF • Cadastro Empresarial"
-                            }
-                        }
-                    ]
-                };
-
-                // Envia para CNPJ
-                fetch(WEBHOOK_CNPJ, {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify(payload)
-                }).then(response => {
-                    console.log("✅ CNPJ enviado para Discord:", response.status);
-                }).catch(error => {
-                    console.error("❌ Erro ao enviar CNPJ:", error);
-                });
-
-                overlay.style.display = 'none';
-                label.style.display = 'block';
-                loader.style.display = 'none';
-                formCard.style.transform = '';
-
-                if (som) som.play();
-
-                message.className = 'form-message success';
-                message.textContent = `✅ Solicitação de CNPJ enviada! Protocolo: ${protocolo}`;
-                message.style.display = 'block';
-
-                // Scroll para mensagem
-                setTimeout(() => {
-                    message.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                }, 100);
-
-            }, 2000);
         }
 
         // Validação Manifesto
@@ -2261,27 +2979,43 @@
             
             campos.forEach(id => {
                 const elemento = document.getElementById(id);
-                if (!elemento.value.trim()) {
+                if (!elemento.value || elemento.value.trim() === '') {
                     mostrarErro(elemento, 'Campo obrigatório');
                     isValid = false;
                 }
             });
             
             if (isValid) {
-                const message = document.getElementById('messageManifesto');
-                message.className = 'form-message success';
-                message.textContent = '✅ Manifesto gerado com sucesso! Código: #M' + Math.floor(Math.random() * 10000);
-                message.style.display = 'block';
+                const dados = {
+                    material: document.getElementById('materialCarga').value,
+                    quantidade: document.getElementById('quantidadeCarga').value,
+                    peso: document.getElementById('pesoCarga').value,
+                    veiculo: document.getElementById('modeloVeiculo').value,
+                    placa: document.getElementById('placaVeiculo').value
+                };
                 
-                setTimeout(() => {
-                    message.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                }, 100);
+                const solicitacao = salvarSolicitacao('Manifesto', dados);
+                
+                const msg = document.getElementById('messageManifesto');
+                msg.className = 'form-message success';
+                msg.innerHTML = `✅ Manifesto gerado! Protocolo: ${solicitacao.protocolo}`;
+                
+                document.getElementById('somSucesso').play();
+                
+                // Limpa o formulário
+                document.getElementById('materialCarga').value = '';
+                document.getElementById('quantidadeCarga').value = '';
+                document.getElementById('pesoCarga').value = '';
+                document.getElementById('modeloVeiculo').value = '';
+                document.getElementById('placaVeiculo').value = '';
+                
+                mostrarMensagem('Manifesto gerado com sucesso!', 'success');
             }
             
             return false;
         }
 
-        // ===== FUNÇÕES PARA DENÚNCIA ANÔNIMA =====
+        // Funções para Denúncia
         function selecionarPrioridade(elemento, prioridade) {
             document.querySelectorAll('.prioridade-option').forEach(el => {
                 el.classList.remove('selected');
@@ -2306,25 +3040,6 @@
             document.getElementById('tagsDenuncia').value = tagsSelecionadas.join(', ');
         }
 
-        // Contador de caracteres para descrição
-        document.addEventListener('DOMContentLoaded', function() {
-            const textarea = document.getElementById('descricaoDenuncia');
-            const contador = document.getElementById('contadorCaracteres');
-            
-            if (textarea && contador) {
-                textarea.addEventListener('input', function() {
-                    contador.textContent = this.value.length;
-                    if (this.value.length < 50) {
-                        this.classList.add('input-error');
-                    } else {
-                        this.classList.remove('input-error');
-                        const errorDiv = this.parentElement.querySelector('.error-message');
-                        if (errorDiv) errorDiv.style.display = 'none';
-                    }
-                });
-            }
-        });
-
         function limparDenuncia() {
             document.querySelectorAll('.prioridade-option').forEach(el => {
                 el.classList.remove('selected');
@@ -2345,21 +3060,14 @@
             
             let isValid = true;
             
-            const camposObrigatorios = [
-                { id: 'tipoIrregularidade', nome: 'Tipo de irregularidade' },
-                { id: 'descricaoDenuncia', nome: 'Descrição detalhada' }
-            ];
-            
-            camposObrigatorios.forEach(campo => {
-                const elemento = document.getElementById(campo.id);
-                if (!elemento.value.trim()) {
-                    mostrarErro(elemento, `${campo.nome} é obrigatório`);
-                    isValid = false;
-                }
-            });
+            const tipo = document.getElementById('tipoIrregularidade');
+            if (!tipo.value) {
+                mostrarErro(tipo, 'Selecione o tipo de irregularidade');
+                isValid = false;
+            }
             
             const descricao = document.getElementById('descricaoDenuncia');
-            if (descricao.value.length < 50) {
+            if (!descricao.value || descricao.value.length < 50) {
                 mostrarErro(descricao, 'Descreva com mais detalhes (mínimo 50 caracteres)');
                 isValid = false;
             }
@@ -2381,45 +3089,123 @@
             }
             
             if (isValid) {
-                enviarDenuncia();
-            } else {
-                const message = document.getElementById('messageDenuncia');
-                message.className = 'form-message error';
-                message.textContent = 'Corrija os erros antes de enviar a denúncia';
-                message.style.display = 'block';
+                const dados = {
+                    tipo: tipo.value,
+                    prioridade: prioridadeSelecionada,
+                    local: document.getElementById('localOcorrencia').value || 'Não informado',
+                    envolvidos: document.getElementById('envolvidos').value || 'Não informado',
+                    periodo: document.getElementById('dataInicio').value && document.getElementById('dataFim').value ? 
+                        `${document.getElementById('dataInicio').value} até ${document.getElementById('dataFim').value}` : 'Não informado',
+                    tags: tagsSelecionadas.join(', ') || 'Nenhuma',
+                    descricao: descricao.value,
+                    evidencias: document.getElementById('evidencias').value || 'Não informado',
+                    contato: document.getElementById('contatoDenuncia').value || 'Anônimo'
+                };
                 
-                const primeiroErro = document.querySelector('.input-error');
-                if (primeiroErro) {
-                    primeiroErro.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                }
+                const solicitacao = salvarSolicitacao('Denúncia', dados);
+                
+                const msg = document.getElementById('messageDenuncia');
+                msg.className = 'form-message success';
+                msg.innerHTML = `✅ Denúncia registrada! Protocolo: ${solicitacao.protocolo}<br><small>Sua denúncia será analisada em até 10 dias úteis.</small>`;
+                
+                document.getElementById('somSucesso').play();
+                
+                // Limpa o formulário
+                document.getElementById('tipoIrregularidade').value = '';
+                document.getElementById('descricaoDenuncia').value = '';
+                document.getElementById('localOcorrencia').value = '';
+                document.getElementById('envolvidos').value = '';
+                document.getElementById('dataInicio').value = '';
+                document.getElementById('dataFim').value = '';
+                document.getElementById('evidencias').value = '';
+                document.getElementById('contatoDenuncia').value = '';
+                document.getElementById('checkVeracidadeDenuncia').checked = false;
+                limparDenuncia();
+                
+                mostrarMensagem('Denúncia registrada com sucesso!', 'success');
             }
             
             return false;
         }
 
-        function enviarDenuncia() {
-            const message = document.getElementById('messageDenuncia');
-            message.className = 'form-message success';
-            message.innerHTML = '✅ <strong>Denúncia registrada com sucesso!</strong><br>' +
-                               'Código de acompanhamento: #D' + Math.floor(Math.random() * 1000000) + '<br>' +
-                               '<small style="font-size: 12px;">Sua denúncia será analisada em até 10 dias úteis.</small>';
-            message.style.display = 'block';
+        // ===== FUNÇÕES AUXILIARES =====
+        function trocarAba(elemento, idAba) {
+            document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
+            elemento.classList.add('active');
             
-            setTimeout(() => {
-                message.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            }, 100);
-            
-            const btnDenuncia = document.querySelector('#aba-denuncia .btn-danger');
-            btnDenuncia.style.transform = 'scale(0.95)';
-            setTimeout(() => btnDenuncia.style.transform = '', 300);
+            document.querySelectorAll('.content-area').forEach(area => area.classList.remove('active'));
+            document.getElementById(idAba).classList.add('active');
         }
 
-        // ===== FUNÇÕES PARA TRANSPARÊNCIA FISCAL =====
+        function verificarNatureza() {
+            const select = document.getElementById('selectNatureza');
+            const input = document.getElementById('inputAssociados');
+            
+            if (select.value === "Empresa individual") {
+                input.value = "Não aplicável";
+                input.disabled = true;
+                input.style.background = '#f5f5f5';
+                input.style.color = '#999';
+            } else {
+                input.value = "";
+                input.disabled = false;
+                input.style.background = '#fdfdfe';
+                input.style.color = '#333';
+            }
+        }
+
+        function resetarCNPJ() { 
+            const input = document.getElementById('inputAssociados');
+            input.disabled = false;
+            input.style.background = '#fdfdfe';
+            input.style.color = '#333';
+        }
+
+        // ===== FUNÇÕES DO IMPOSTÔMETRO =====
+        function atualizarImpostometro() {
+            valorArrecadado += Math.random() * 10;
+            const el = document.getElementById('impostometro');
+            if(el) el.innerText = 'R$ ' + valorArrecadado.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+            
+            const agora = new Date();
+            const horaFormatada = agora.toLocaleTimeString('pt-BR');
+            const horaEl = document.getElementById('horaAtualizacao');
+            if (horaEl) horaEl.textContent = horaFormatada;
+            
+            atualizarEstatisticasSecundarias();
+        }
+        
+        function atualizarEstatisticasSecundarias() {
+            const arrecadacaoDiaria = valorArrecadado / 30;
+            const arrecadacaoEl = document.getElementById('arrecadacaoDiaria');
+            if (arrecadacaoEl) arrecadacaoEl.textContent = 'R$ ' + Math.round(arrecadacaoDiaria).toLocaleString('pt-BR');
+            
+            const impostosRecolhidos = Math.floor(15000 + (valorArrecadado / 100));
+            const impostosEl = document.getElementById('impostosRecolhidos');
+            if (impostosEl) impostosEl.textContent = impostosRecolhidos.toLocaleString('pt-BR');
+            
+            const taxaBase = 94.7;
+            const taxaAtual = taxaBase + (Math.random() * 0.6 - 0.3);
+            const taxaEl = document.getElementById('taxaConformidade');
+            if (taxaEl) taxaEl.textContent = taxaAtual.toFixed(1) + '%';
+            
+            const multasBase = 125300;
+            const multasAtual = multasBase * (1 + (Math.random() * 0.1 - 0.05));
+            const multasEl = document.getElementById('multasAplicadas');
+            if (multasEl) multasEl.textContent = 'R$ ' + Math.round(multasAtual).toLocaleString('pt-BR');
+            
+            const cnpjsBase = 247;
+            const cnpjsEl = document.getElementById('novosCnpjs');
+            if (cnpjsEl) cnpjsEl.textContent = (cnpjsBase + Math.floor(Math.random() * 5)).toLocaleString('pt-BR');
+            
+            const denunciasBase = 1842;
+            const denunciasEl = document.getElementById('denunciasProcessadas');
+            if (denunciasEl) denunciasEl.textContent = (denunciasBase + Math.floor(Math.random() * 10)).toLocaleString('pt-BR');
+        }
+
         function atualizarEstatisticas() {
             const btn = document.querySelector('#aba-transparencia .btn-primary');
-            const originalText = btn.innerHTML;
-            
-            btn.innerHTML = '<div class="loader" style="display:block; width: 20px; height: 20px; margin-right: 10px;"></div> Atualizando...';
+            btn.innerHTML = '<div class="loader" style="display:inline-block; width: 20px; height: 20px; margin-right: 10px;"></div> Atualizando...';
             btn.disabled = true;
             
             setTimeout(() => {
@@ -2431,40 +3217,95 @@
                 const formCard = document.querySelector('#aba-transparencia .form-card');
                 formCard.style.boxShadow = '0 0 30px rgba(40, 167, 69, 0.3)';
                 setTimeout(() => formCard.style.boxShadow = '', 1000);
+                
+                mostrarMensagem('Estatísticas atualizadas!', 'success');
             }, 1500);
         }
 
         function exportarDados() {
-            alert('✅ Relatório exportado com sucesso!\nO arquivo foi salvo no formato PDF.\nNome: relatorio_fiscal_marcone_' + new Date().toISOString().slice(0,10) + '.pdf');
+            mostrarMensagem('Relatório exportado com sucesso!', 'success');
         }
 
-        // Validação em tempo real para campos obrigatórios
+        // ===== INICIALIZAÇÃO =====
         document.addEventListener('DOMContentLoaded', function() {
-            const topBarImg = document.querySelector('.top-bar img[alt="União e Reconstrução"]');
-            if(topBarImg) {
-                topBarImg.addEventListener('mouseenter', function() {
-                    this.style.transform = 'scale(1.05)';
-                });
-                topBarImg.addEventListener('mouseleave', function() {
-                    this.style.transform = '';
+            // Inicializar com dados de exemplo se não existirem
+            if (!localStorage.getItem('solicitacoes')) {
+                const exemploIRPF = {
+                    nome: 'João Silva',
+                    rg: '12.345.678-9',
+                    ocupacao: 'Empresário',
+                    renda: '15000',
+                    veiculos: '2',
+                    aeronaves: 'Não Possuo',
+                    embarcacoes: 'Não Possuo'
+                };
+                salvarSolicitacao('IRPF', exemploIRPF);
+                
+                const exemploCNPJ = {
+                    solicitante: 'Maria Oliveira',
+                    rg: '98.765.432-1',
+                    contato: '(11) 99999-9999',
+                    empresa: 'Comércio Local Ltda',
+                    endereco: 'Av. Principal, 123',
+                    natureza: 'Sociedade limitada',
+                    porte: 'Médio',
+                    avcb: 'Sim',
+                    associados: 'Maria Oliveira, João Oliveira'
+                };
+                salvarSolicitacao('CNPJ', exemploCNPJ);
+                
+                const exemploDenuncia = {
+                    tipo: 'Sonegação Fiscal',
+                    prioridade: 'alta',
+                    local: 'Centro Comercial',
+                    envolvidos: 'Empresa X',
+                    periodo: '2025-01-01 até 2025-03-01',
+                    tags: 'Sonegação, Caixa 2',
+                    descricao: 'Suspeita de sonegação fiscal envolvendo a empresa X que não emite notas fiscais há meses. Os proprietários ostentam riqueza incompatível com o faturamento declarado.',
+                    evidencias: 'Testemunhas no local',
+                    contato: 'Anônimo'
+                };
+                salvarSolicitacao('Denúncia', exemploDenuncia);
+                
+                const exemploManifesto = {
+                    material: 'Cimento',
+                    quantidade: '50 sacos',
+                    peso: '2500kg',
+                    veiculo: 'Benson',
+                    placa: 'ABC1D23'
+                };
+                salvarSolicitacao('Manifesto', exemploManifesto);
+            }
+
+            // Configurar contador de caracteres
+            const textarea = document.getElementById('descricaoDenuncia');
+            const contador = document.getElementById('contadorCaracteres');
+            
+            if (textarea && contador) {
+                textarea.addEventListener('input', function() {
+                    contador.textContent = this.value.length;
+                    if (this.value.length < 50 && this.value.length > 0) {
+                        this.classList.add('input-error');
+                    } else {
+                        this.classList.remove('input-error');
+                    }
                 });
             }
-            
+
+            // Validação em tempo real
             document.querySelectorAll('input[required], select[required], textarea[required]').forEach(elemento => {
                 elemento.addEventListener('blur', function() {
-                    if (!this.value.trim()) {
+                    if (!this.value || this.value.trim() === '') {
                         mostrarErro(this, 'Campo obrigatório');
                     } else {
                         limparErro(this);
                     }
                 });
-                
-                elemento.addEventListener('input', function() {
-                    if (this.value.trim()) {
-                        limparErro(this);
-                    }
-                });
             });
+
+            // Iniciar impostômetro
+            atualizarImpostometro();
+            setInterval(atualizarImpostometro, 5000);
         });
     </script>
 </body>
